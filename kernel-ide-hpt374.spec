@@ -1,9 +1,9 @@
 #
 # Conditional build:
-# _without_dist_kernel	- without kernel from distribution
+%bcond_without	dist_kernel	# without kernel from distribution
 #
 Summary:	Kernel HPT374 4-channel UDMA/ATA133 Controller
-Summary(pl):	Sterownik HPT374 dla Linuksa
+Summary(pl):	Sterownik dla Linuksa do HPT374 - 4-kana這wych kontroler闚 UDMA/ATA133
 Name:		kernel-ide-hpt374
 Version:	2.10
 %define	rel	0.1
@@ -12,32 +12,34 @@ License:	???
 Group:		Base/Kernel
 Source0:	http://www.highpoint-tech.com/hpt374-opensource-v2.10.tgz
 # Source0-md5:	917268ff537a20a7f04093b680fb30b2
-%{!?_without_dist_kernel:BuildRequires:	kernel-source}
+%{?with_dist_kernel:BuildRequires:	kernel-source}
 BuildRequires:	rpmbuild(macros) >= 1.118
-%{!?_without_dist_kernel:%requires_releq_kernel_up}
+%{?with_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Kernel HPT374 4-channel UDMA/ATA133 Controller
+Kernel HPT374 4-channel UDMA/ATA133 Controller.
 
 %description -l pl
-Sterownik HPT374 dla Linuksa
+Sterownik dla Linuksa do HPT374 - 4-kana這wych kontroler闚
+UDMA/ATA133.
 
 %package -n kernel-smp-ide-hpt374
 Summary:	Kernel SMP HPT374 4-channel UDMA/ATA133 Controller
-Summary(pl):	Sterownik HPT374 dla Linuksa SMP
+Summary(pl):	Sterownik dla Linuksa SMP do HPT374 - 4-kana這wych kontroler闚 UDMA/ATA133
 Release:	%{rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
-%{!?_without_dist_kernel:%requires_releq_kernel_up}
+%{?with_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-smp-ide-hpt374
-Kernel SMP HPT374 4-channel UDMA/ATA133 Controller
+Kernel SMP HPT374 4-channel UDMA/ATA133 Controller.
 
 %description -n kernel-smp-ide-hpt374 -l pl
-Sterownik HPT374 dla Linuksa SMP
+Sterownik dla Linuksa SMP do HPT374 - 4-kana這wych kontroler闚
+UDMA/ATA133.
 
 %prep
 %setup -q -c 
