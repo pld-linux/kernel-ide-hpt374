@@ -55,14 +55,14 @@ for cfg in smp up; do
 	cd tmp
 	cp -r %{_kernelsrcdir}/scripts .
 	install -d {arch,drivers}
-	ln -sf %{_kernelsrcdir}/arch/%{_arch} arch/%{_arch}
+	cp -r %{_kernelsrcdir}/arch/i386 arch/
 	ln -sf %{_kernelsrcdir}/drivers/scsi drivers/scsi
 	install -d include/config
 	touch include/config/MARKER
         ln -sf %{_kernelsrcdir}/config-$cfg .config
         ln -sf %{_kernelsrcdir}/Makefile
-	ln -sf %{_kernelsrcdir}/include/asm-%{_arch} include/asm
-	ln -sf %{_kernelsrcdir}/include/asm-%{_arch} include/asm-%{_arch}
+	cp -r %{_kernelsrcdir}/include/asm-i386 include/asm-i386
+	ln -sf asm-i386 include/asm
 	ln -sf %{_kernelsrcdir}/include/asm-generic include/asm-generic
 	ln -sf %{_kernelsrcdir}/include/linux include/linux
 	ln -sf %{_kernelsrcdir}/include/scsi include/scsi
