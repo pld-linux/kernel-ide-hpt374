@@ -11,7 +11,7 @@ Release:	%{rel}@%{_kernel_ver_str}
 License:	???
 Group:		Base/Kernel
 Source0:	http://www.highpoint-tech.com/hpt374-opensource-v2.10.tgz
-# Source0-md5:	da75a1f2bd1b8657bcc7b95862a2c4d6
+# Source0-md5:	917268ff537a20a7f04093b680fb30b2
 %{!?_without_dist_kernel:BuildRequires:	kernel-source}
 BuildRequires:	rpmbuild(macros) >= 1.118
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
