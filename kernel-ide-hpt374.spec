@@ -5,12 +5,12 @@
 Summary:	Kernel HPT374 4-channel UDMA/ATA133 Controller
 Summary(pl):	Sterownik HPT374 dla Linuksa
 Name:		kernel-ide-hpt374
-Version:	1.11
+Version:	2.10
 %define	rel	0.1
 Release:	%{rel}@%{_kernel_ver_str}
 License:	???
 Group:		Base/Kernel
-Source0:	http://www.highpoint-tech.com/hpt374-opensource-v111.tgz
+Source0:	http://www.highpoint-tech.com/hpt374-opensource-v2.10.tgz
 # Source0-md5:	da75a1f2bd1b8657bcc7b95862a2c4d6
 %{!?_without_dist_kernel:BuildRequires:	kernel-source}
 BuildRequires:	rpmbuild(macros) >= 1.118
@@ -40,7 +40,7 @@ Kernel SMP HPT374 4-channel UDMA/ATA133 Controller
 Sterownik HPT374 dla Linuksa SMP
 
 %prep
-%setup -q -n hpt374-opensource-v111
+%setup -q -c 
 
 %build
 %{__make} SMP="1"
