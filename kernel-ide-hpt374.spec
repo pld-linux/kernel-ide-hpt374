@@ -3,7 +3,7 @@
 %bcond_without	dist_kernel	# without kernel from distribution
 #
 Summary:	Kernel HPT374 4-channel UDMA/ATA133 Controller
-Summary(pl.UTF-8):   Sterownik dla Linuksa do HPT374 - 4-kanałowych kontrolerów UDMA/ATA133
+Summary(pl.UTF-8):	Sterownik dla Linuksa do HPT374 - 4-kanałowych kontrolerów UDMA/ATA133
 Name:		kernel-ide-hpt374
 Version:	2.11
 %define	rel	0.1
@@ -28,7 +28,7 @@ UDMA/ATA133.
 
 %package -n kernel-smp-ide-hpt374
 Summary:	Kernel SMP HPT374 4-channel UDMA/ATA133 Controller
-Summary(pl.UTF-8):   Sterownik dla Linuksa SMP do HPT374 - 4-kanałowych kontrolerów UDMA/ATA133
+Summary(pl.UTF-8):	Sterownik dla Linuksa SMP do HPT374 - 4-kanałowych kontrolerów UDMA/ATA133
 Release:	%{rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_up}
