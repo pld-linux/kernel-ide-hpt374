@@ -10,7 +10,7 @@ Version:	2.11
 Release:	%{rel}@%{_kernel_ver_str}
 License:	???
 Group:		Base/Kernel
-Source0:	http://www.highpoint-tech.com/BIOS%20%2B%20Driver/hpt374/Linux/hpt374-opensource-v2.11.tgz
+Source0:	http://www.highpoint-tech.com/BIOS_Driver/hpt374/Linux/hpt374-opensource-v%{version}.tgz
 # Source0-md5:	3780db3bf03b2d0c6f14ffd997cca59a
 %{?with_dist_kernel:BuildRequires:	kernel-source}
 BuildRequires:	rpmbuild(macros) >= 1.118
